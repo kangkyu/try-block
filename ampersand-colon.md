@@ -45,7 +45,7 @@ method(:to_s).to_proc
 #   from (irb):38
 #   from /Users/klee/.rbenv/versions/2.3.0/bin/irb:11:in `<main>'
 ```
-I think I know why it's not working. It's a lambda, and collect method takes a block with a block parameter.
+I think I know why it's not working. It's a lambda, and collect method takes a block with a **block parameter**, which matters to a lambda.
 
 ```rb
 :to_s.to_proc
