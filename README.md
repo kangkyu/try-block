@@ -190,6 +190,8 @@ b = -> { puts 1+2 }
 
 which is an object? You know what **object** is? If you know, then you know everything in Ruby. "Everything is an object in Ruby" you always hear.
 
+You can tell it's an object, whenever it doesn't give any syntax error. I think.
+
 ```rb
 { puts 1+2 } # not an object
 -> { puts 1+2 } # object (and it's a "Proc" object)
@@ -264,6 +266,8 @@ But why? I like the "stabby lambda"!
   #=> 0 1 2 3 4
 ``` 
 > http://ruby-doc.org/core-2.3.0/Integer.html#method-i-times
+
+So the secret was two pipes (vertical bars).
 
 ```rb
 b = -> { |i| puts 1+2 }
