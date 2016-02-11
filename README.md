@@ -293,6 +293,6 @@ Now you read errors. It says wrong number of arguments.
 
 Therefore, block parameters are necessary for a lambda. Not for a proc.
 
-Block parameters, block arguments.. for another day. I think it would be enough even with no-parameter blocks only.
 
 # The end
+Block parameters, block arguments.. for another day.
