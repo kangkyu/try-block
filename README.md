@@ -123,7 +123,7 @@ b.call
 
 # block or proc
 
-I remembered `yield` is in other words `block.call` from Chris Pine book. He actually prefer `block.call` over `yield` in Chapter 14. (I remembered that. That's what I could do. Amazing because I forgot everything else on that Chapter)
+I remembered `yield` is in other words `block.call` from Chris Pine book. He actually prefers `block.call` over `yield` in Chapter 14. (I remembered that. That's what I could do. Amazing because I forgot everything else on that Chapter)
 
 ```rb
 def say &b
