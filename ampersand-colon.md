@@ -30,7 +30,7 @@ n(&method(:m).to_proc)
 ```
 ri to_proc
 ```
-This is when `ri` really shines. You found `Symbol#to_proc`. Finally, what I tried was
+This is when `ri` really shines. You found `Symbol#to_proc` and `Method#to_proc`. Finally, what I tried was
 
 ```rb
 method(:to_s)
