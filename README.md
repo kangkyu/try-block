@@ -1,6 +1,6 @@
 # try Block
 
-...it's really blocking.
+...it's really blocking you.
 
 I started with Chris Pine [book](https://pine.fm/LearnToProgram/), which starts with `puts` in **Chapter 2**. (`'Hello World'` shows in the **Introduction**, but that's not where I started) So that's why my first Ruby code was:
 
@@ -9,7 +9,7 @@ puts 1+2
 # 3
 # => nil
 ```
-and so on.
+and so on. Nobody quits at this point.
 
 ```rb
 v = 1+2
