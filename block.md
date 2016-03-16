@@ -283,12 +283,26 @@ Oops, it's not working.. so after search,
 
 ```
 b = ->(i) { puts 1+2 }
+# => #<Proc:0x007faa29879b20@(irb):5 (lambda)>
 3.times &b
 # 3
 # 3
 # 3
 # => 3
 ```
+
+This one also working, you can have "lambda lambda"
+
+```
+b = lambda {|i| puts 1+2 }
+# => #<Proc:0x007faa298621a0@(irb):7 (lambda)>
+3.times &b
+# 3
+# 3
+# 3
+# => 3
+```
+
 
 Again, why?
 
