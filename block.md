@@ -1,6 +1,6 @@
 # try Block
 
-...it's really blocking you.
+...hitting the wall? then stop learnng Ruby, and come back any time. This is how I learned Ruby coding.
 
 I started with Chris Pine [book](https://pine.fm/LearnToProgram/), which starts with `puts` in **Chapter 2**. (`'Hello World'` shows in the **Introduction**, but that's not where I started) So that's why my first Ruby code was:
 
@@ -190,7 +190,7 @@ b = -> { puts 1+2 }
 
 which is an object? You know what **object** is? If you know, then you know everything in Ruby. "Everything is an object in Ruby" you always hear.
 
-You can tell it's an object, whenever it doesn't give any syntax error. I think.
+You can tell it's an object, whenever it doesn't give any syntax error. Type a thing and press enter on `irb`, if you see an error then it's not a thing.
 
 ```rb
 { puts 1+2 } # not an object
