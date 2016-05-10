@@ -1,4 +1,5 @@
-## need setup
+## need setup these
+
 + Erlang
 + Elixir
 + Mix
@@ -21,6 +22,7 @@
 | mix phoenix.gen.html  | rails generate scaffold  |
 | mix ecto.migrate  | rake db:migrate  |
 | mix -h  | rails -h  |
+| PostController | PostsController
 | eex  | erb  |
 
 
@@ -29,18 +31,20 @@ mix phoenix.new appName
 mix deps.get
 mix ecto.create
 mix phoenix.server
-mix phoenix.routes
 iex -S mix phoenix.server
 ```
 
 ```
 mix phoenix.gen.html Post posts title body:text
 mix ecto.migrate
+mix phoenix.routes
 ```
 
 ```ex
 resources "/posts", PostController
 ```
+
+Ecto, Plug, Pipeline...
 
 ## repl
 
@@ -50,7 +54,7 @@ resources "/posts", PostController
 | v  | _  |
 | Ctrl-D | Ctrl-C twice |
 
-> There are several ways of exiting from iex—none are tidy. The easiest two are typing Ctrl-C twice or typing Ctrl-G followed by q and Return.
+> There are several ways of exiting from iex—none are tidy. The easiest two are typing `Ctrl-C` twice or typing `Ctrl-G` followed by `q` and Return.
 
 ## elm-brunch
 
@@ -59,11 +63,11 @@ npm install --save elm-brunch
 ```
 
 ```
-    elmBrunch: {
-      elmFolder: "web/static/elm",
-      mainModules: ["App.elm"],
-      outputFolder: "../vendor/elm"
-    },
+  elmBrunch: {
+    elmFolder: "web/static/elm",
+    mainModules: ["App.elm"],
+    outputFolder: "../vendor/elm"
+  },
 ```
 
 ```
@@ -77,16 +81,18 @@ brunch build
 mix phoenix.server
 ```
 
-## elm-brunch
+https://github.com/kangkyu/upvotes
+
+## elm-brunch only elm
 
 #### grunt-cli
 
 ```
-    npm install -g grunt-cli --save-dev
-    npm install grunt --save-dev
-    npm install grunt-contrib-watch --save-dev
-    npm install grunt-contrib-clean --save-dev
-    npm install grunt-elm --save-dev
+npm install -g grunt-cli --save-dev
+npm install grunt --save-dev
+npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-clean --save-dev
+npm install grunt-elm --save-dev
 ```
 
 ```
@@ -118,7 +124,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['elm']);
 
 };
-
 ```
 
 ```
@@ -130,10 +135,10 @@ grunt watch
 #### gulp-cli
 
 ```
-    npm install -g gulp-cli --save-dev
-    npm install gulp --save-dev
-    npm install gulp-elm --save-dev
-    npm install gulp-rename --save-dev
+npm install -g gulp-cli --save-dev
+npm install gulp --save-dev
+npm install gulp-elm --save-dev
+npm install gulp-rename --save-dev
 ```
 
 ```
@@ -161,7 +166,6 @@ function swallowError (error) {
 gulp.task('default', ['elm'], function () {
     gulp.watch('./*.elm', ['elm']);
 });
-
 ```
 
 ```
@@ -171,9 +175,9 @@ gulp
 #### brunch
 
 ```
-  npm init
-  npm install -g brunch --save-dev
-  npm install elm-brunch --save-dev
+npm init
+npm install -g brunch --save-dev
+npm install elm-brunch --save-dev
 ```
 
 ```
@@ -207,12 +211,12 @@ module.exports = {
 ```
 
 ```
-    brunch watch --server
+brunch watch --server
 ```
 
 https://github.com/kangkyu/hello-elm
 
-```
+```elm
 module Hello where
 
 import Html
@@ -224,13 +228,15 @@ main =
 ```css
 h1 {
   font-family: Verdana;
-  font-size: 36px
+  font-size: 36px;
 }
 ```
 
 ## elm-reactor
 
 https://github.com/kangkyu/hello-elm-reactor
+
+> no CSS to watch
 
 ```elm
 module Hello where
@@ -255,4 +261,24 @@ showMiddle w h =
 main : Signal Element
 main =
   Signal.map2 showMiddle Window.width Window.height
+```
+
+### No brunch
+
+> Node is an optional dependency.
+
+```
+mix phoenix.new appName --no-brunch
+mix deps.get
+mix phoenix.server
+```
+
+> If we don't have any static assets, or we want to use another build tool, we can pass the `--no-brunch` flag when creating a new application and node won't be required at all.
+
+### API using JSON
+```
+mix phoenix.new appName --no-html --no-brunch
+mix phoenix.gen.json Post posts title body:text
+resources "/posts", PostController, except: [:new, :edit]
+mix phoenix.routes
 ```
