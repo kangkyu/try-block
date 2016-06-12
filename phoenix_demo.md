@@ -48,11 +48,11 @@ Ecto, Plug, Pipeline...
 
 ## repl
 
-| elixir | ruby |
+| ruby | elixir |
 | ------------- | ------------- |
-| iex  | irb  |
-| v  | _  |
-| Ctrl-D | Ctrl-C twice |
+| irb  | iex |
+| _  | v  |
+| Ctrl-D or `exit` | Ctrl-C twice |
 
 > There are several ways of exiting from iex—none are tidy. The easiest two are typing `Ctrl-C` twice or typing `Ctrl-G` followed by `q` and Return.
 
