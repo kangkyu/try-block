@@ -1,0 +1,15 @@
+Here's how to customize length of token (by default, you know, it's `SecureRandom.base58(24)`) I found:
+
+override `generate_unique_secure_token` class method
+```rb
+class User < ActiveRecord::Base
+  has_secure_token :auth_token
+
+  def self.generate_unique_secure_token
+    loop do
+      token = SecureRandom.uuid.gsub(/\-/, '')
+      break token unless self.exists?(auth_token: token)
+    end
+  end
+end
+```
